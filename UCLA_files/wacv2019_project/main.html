@@ -1,0 +1,862 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><TITLE>Generator Network for Dynamic Patterns</TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+
+<META content=IE=Edge,chrome=1 http-equiv=X-UA-Compatible>
+<LINK rel=stylesheet href="css/style.css" media=screen>
+<STYLE type=text/css>
+@media Print
+{
+#STTBimg {
+    DISPLAY: none
+}
+#STTBimg2 {
+    DISPLAY: none
+}
+    }
+.STYLE1 {
+    FONT-SIZE: 24px; FONT-WEIGHT: bold
+}
+</STYLE>
+<style type="text/css">
+      body{background:#FFFFFF;text-align:center;}
+      div{width:778px;margin:0 auto;background:#fff;text-align:left;}
+
+      
+</style>
+
+
+<META name=GENERATOR content="MSHTML 9.00.8112.16441"></head>
+<body class=" hasGoogleVoiceExt" screen_capture_injected="true">
+
+<div class="container">
+      <h1 style="TEXT-ALIGN: center">Learning Generator Network for Dynamic Patterns</H1>      
+
+
+      <div class=vspace> </div>
+      <h2>Introduction</h2>
+      <P>We address the problem of learning dynamic patterns from unlabeled video sequences, either in the form of generating new video sequences, or  recovering incomplete video sequences. This problem is challenging because the appearances and motions in the video sequences can be very complex. We propose to use the alternating back-propagation algorithm to learn the generator network with the spatial-temporal convolutional architecture. The proposed method is efficient, flexible and can be further improved by using learned initialization for the recovery tasks.In this supplementary material, we mainly show some comparsion results with state-of-art methods as well as representative qualitative recovery results.  
+      </P>
+
+     <div class=vspace></div>
+             
+
+            
+      <div class=line-seg> </div>
+      <div class=vspace></div>
+      <h2> Qualitative Experiments</h2>        
+            
+      <a name="exp1"></a> 
+      <h3>Experiment 1: Qualitive experiments and comparison</h3>
+      <p> <b>Figure 1.</b> Comparison results with Linear Dynamic system (<a href='http://www.vision.jhu.edu/reading_group/dorettoCSW03ijcv.pdf'>LDS</a>), Alternating back-propagation (<a herf = '/media/vclagpu/Data1/tianhan_code/tianhan/videogan/flame'>ABP</a>), 3D VAE and <a href='http://web.mit.edu/vondrick/tinyvideo/'>3D GAN</a> </b>. For each category, the <font color="red">first animation </font>is the training sequence, and the rest of five from left to right are LDS, ABP, 3D VAE, 3D GAN respectively and our method respectively.</p>
+
+      <form id="exp_dynamic_texture">
+      <div class="div-table">
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Bark Water</h5> </font></center></div>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Flame</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/bark_water/training.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/bark_water/LDS.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/bark_water/2DABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/bark_water/3DVAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/bark_water/3DGAN.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/bark_water/3DABP.gif" width=100% alt="" align="middle">
+                  </div>
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/flame/training.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/flame/LDS.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/flame/2DABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/flame/3DVAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/flame/3DGAN.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/flame/3DABP.gif" width=100% alt="" align="middle">
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Grid</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/grid/training.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/grid/LDS.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/grid/2DABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/grid/3DVAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/grid/3DGAN.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./comparison/grid/3DABP.gif" width=100% alt="" align="middle">
+                  </div>
+                </center>
+              </div>
+
+
+            </div>
+
+      </div>
+      </form>
+
+      <div class=line-seg> </div>
+      <div class=vspace></div>
+      <h2> Quantitative Experiments</h2>
+
+      <a name="exp2"></a> 
+      <h3>Experiment 2: Interpolation</h3>
+      <p> <b>Figure 2.</b> Video interpolation. The <font color="red">first animation </font>is the original sequence with consecutive blocks , and the second and third sequences are the interpolation results by LDS (left) and our method (right). The <font color="red">4th animation </font>is the original sequence with random blocks, and 5th and 6th sequences are the results by LDS (left) and our method (right). </b></p>
+
+      <form id="exp_interpolation">
+      <div class="div-table">
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Flag</h5> </font></center></div>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Light</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/flag/masked_3D.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/flag/LHD_block3D.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/flag/3DABP_block3D.gif" width=100% alt="" align="middle">
+                  </div>
+                  
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/flag/masked_rb.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/flag/LHD_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/flag/3DABP_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/light/masked_3D.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/light/LHD_block3D.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/light/3DABP_block3D.gif" width=100% alt="" align="middle">
+                  </div>
+                  
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/light/masked_rb.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/light/LHD_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/light/3DABP_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Candle</h5> </font></center></div>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Escalator</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/candle/masked_3D.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/candle/LHD_block3D.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/candle/3DABP_block3D.gif" width=100% alt="" align="middle">
+                  </div>
+                  
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/candle/masked_rb.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/candle/LHD_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/candle/3DABP_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/elevator/masked_3D.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/elevator/LHD_block3D.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/elevator/3DABP_block3D.gif" width=100% alt="" align="middle">
+                  </div>
+                  
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/elevator/masked_rb.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/elevator/LHD_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/elevator/3DABP_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Waterfall</h5> </font></center></div>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Waterstone</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterfall/masked_3D.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterfall/LHD_block3D.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterfall/3DABP_block3D.gif" width=100% alt="" align="middle">
+                  </div>
+                  
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterfall/masked_rb.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterfall/LHD_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterfall/3DABP_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterstone/masked_3D.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterstone/LHD_block3D.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterstone/3DABP_block3D.gif" width=100% alt="" align="middle">
+                  </div>
+                  
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterstone/masked_rb.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterstone/LHD_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_interpolation/waterstone/3DABP_rblock.gif" width=100% alt="" align="right">
+                  </div>
+                </center>
+              </div>
+
+            </div>
+      </div>
+      </form>
+
+      <div class=line-seg> </div>
+      <a name="exp3"></a> 
+      <h3>Experiment 3: Video recovery</h3>
+      <p> <b>Figure 3.</b> Video recovery on salt and pepper M0.5 (which covers roughtly 50% of pixels) M0.9, P20 (which is a single 20x20 patch mask), P40, and B35 (which is a 35x35x20 3D block). For each experimental setting, The <font color="red">first animation </font>is the occluded sequence to be recovered, and the rest of three from left to right are the recovered results by <a href='http://web.mit.edu/vondrick/tinyvideo/'>3D GAN</a>, 3D WS, 3D VAE and our methods (ABP and Learned Intialization-ABP). </b></p>
+
+      <form id="exp_videorecovery">
+      <div class="div-table">
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Netherlands Flag</h5> </font></center></div>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Light</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.5/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.5/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.5/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.5/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.5/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.5/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.5/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.5/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.5/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.5/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.5/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.5/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                </center>
+              </div>
+
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.9/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.9/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.9/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.9/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.9/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/M0.9/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.9/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.9/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.9/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.9/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.9/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/M0.9/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                </center>
+              </div>
+
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P20/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P20/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P20/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P20/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P20/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P20/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P20/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P20/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P20/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P20/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P20/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P20/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                </center>
+              </div>
+
+            </div>
+
+                  <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P40/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P40/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P40/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P40/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P40/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/P40/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P40/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P40/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P40/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P40/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P40/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/P40/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                </center>
+              </div>
+
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/B35/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/B35/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/B35/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/B35/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/B35/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/netherlands/B35/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/B35/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/B35/gen_GAN.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/B35/gen_WS.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/B35/gen_VAE.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/B35/gen_ABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-6s">
+                    <img src="./video_recovery/light/B35/gen_WSABP.gif" width=100% alt="" align="middle">
+                  </div>
+
+
+                </center>
+              </div>
+
+            </div>
+
+
+      </div>
+      </form>
+
+      <div class=line-seg> </div>
+
+      <a name="exp4"></a> 
+      <h3>Experiment 4: Learning from incomplete video</h3>
+      <p> <b>Figure 4.</b> Learning from incomplete video, in which the training video is occluded by M0.5 (which covers roughtly 50% of pixels), P20 (which is a single 20x20 patch mask), and B25 (which is a 25x25x15 3D block). For each experimental setting, The <font color="red">first animation </font>is the occluded training sequence, and the rest of four from left to right are the recovered results by 3D WS, 3D VAE and our methods (ABP and Learned Initialization-ABP). Note that experiment 4 is different from experiment 3. in this experiment, the training video is occluded and in the learning, the video is not observed. We don't compare with 3D GAN, since 3D GAN cannot learn from incomplete video.</b></p>
+
+      <form id="exp_incomplete">
+      <div class="div-table">
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Flamingo</h5> </font></center></div>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Flag</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/M0.5/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+             
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/M0.5/WS_500.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/M0.5/VAE_500.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/M0.5/ABP_500.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/M0.5/WSABP_500.gif" width=100% alt="" align="right">
+                  </div>
+
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/M0.5/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+             
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/M0.5/WS_500.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/M0.5/VAE_500.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/M0.5/ABP_500.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/M0.5/WSABP_500.gif" width=100% alt="" align="right">
+                  </div>
+
+                </center>
+              </div>
+
+            </div>
+
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/P20/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+             
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/P20/WS_500.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/P20/VAE_500.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/P20/ABP_500.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/P20/WSABP_500.gif" width=100% alt="" align="right">
+                  </div>
+
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/P20/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+             
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/P20/WS_500.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/P20/VAE_500.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/P20/ABP_500.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/P20/WSABP_500.gif" width=100% alt="" align="right">
+                  </div>
+
+                </center>
+              </div>
+
+            </div>
+
+
+         
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/B25/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+             
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/B25/WS_500.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/B25/VAE_500.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/B25/ABP_500.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/animal/B25/WSABP_500.gif" width=100% alt="" align="right">
+                  </div>
+
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/B25/masked_video.gif" width=100% alt="" align="left">
+                  </div>
+             
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/B25/WS_500.gif" width=100% alt="" align="middle">
+                  </div>
+
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/B25/VAE_500.gif" width=100% alt="" align="middle">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/B25/ABP_500.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-5s">
+                    <img src="./learn_incomplete/flag/B25/WSABP_500.gif" width=100% alt="" align="right">
+                  </div>
+
+                </center>
+              </div>
+
+            </div>
+      </div>
+      </form>
+
+
+    <div class=line-seg> </div>
+
+      <a name="exp5"></a> 
+      <h3>Experiment 5: Learning mixed patterns</h3>
+      <p> <b>Figure 5.</b> Learning from mixed patterns. In this experiment, we learn from two mixed videos. The flag in snow is learned from two mixed videos. The oil painting style is learned from one static image (oil painting) and one video (Netherlands flag). For each category, The <font color="red">first and second animation/image </font> are the training sequence/image, and the third one is the generated dynamic patterns.</b></p>
+
+
+      <form id="exp_dynamic_texture">
+      <div class="div-table">
+
+            <div class="headRow" align='center'>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Flag in snow</h5> </font></center></div>
+                <div  class="div-table-col"><center><font color="#086A9B"><h5>Oil painting style</h5> </font></center></div>
+            </div>
+
+            <div class="div-table-row">
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-3s">
+                    <img src="./mixed_pattern/snow.gif" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-3s">
+                    <img src="./mixed_pattern/flag.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-3s">
+                    <img src="./mixed_pattern/snow_flag.gif" width=100% alt="" align="middle">
+                  </div>
+                </center>
+              </div>
+
+              <div class="div-table-col">
+                <center>
+
+                  <div class="div-table-col-3s">
+                    <img src="./mixed_pattern/painting.jpg" width=100% alt="" align="right">
+                  </div>
+                  <div class="div-table-col-3s">
+                    <img src="./mixed_pattern/flag.gif" width=100% alt="" align="left">
+                  </div>
+                  <div class="div-table-col-3s">
+                    <img src="./mixed_pattern/oil_style.gif" width=100% alt="" align="middle">
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+      </div>
+      </form>
+
+      
+
+      <p></p>
+    <div class=line> </div>
+      <h4> <center><a class='urllink' href='./main.html' title='' rel='nofollow'>Top</a> </center></h4>
+</div>
+</body></html>
