@@ -1,1 +1,113 @@
 
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://enijkamp.github.io/project_triangle/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        a {
+            color: #4183C4;
+            text-decoration: none;
+        }
+
+        p {
+            line-height: 20px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        #abs {
+            text-align: center;
+        }
+
+        #abs .descriptor {
+            display: none;
+        }
+
+        #abs h1.title {
+            margin: .5em 0 .5em 20px;
+            font-size: x-large;
+            font-weight: bold;
+            line-height: 120%;
+        }
+
+        #abs .authors {
+            margin: .5em 0 .5em 20px;
+            font-size: medium;
+            line-height: 150%;
+        }
+
+        #abs .authors a {
+            font-size: medium;
+        }
+
+        #abs p {
+            text-align: justify;
+        }
+
+        .bib {
+            font-size: small;
+        }
+
+        .figure {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div id="abs">
+        <h1>Joint Training of Variational Auto-Encoder and Latent Energy-Based Model</h1>
+        <div class="authors"><a href="mailto:than6@stevens.edu">Tian Han</a><sup>1</sup>, <a href="mailto:enijkamp@ucla.edu">Erik Nijkamp</a><sup>2</sup>, <a href="mailto:linqizhou907@gmail.com">Linqi Zhou</a><sup>2</sup>, <a href="mailto:bopang@ucla.edu">Bo Pang</a><sup>2</sup>, <a href="mailto:sczhu@stat.ucla.edu">Song-Chun Zhu</a><sup>2</sup>, <a href="mailto:ywu@stat.ucla.edu">Ying Nian Wu</a><sup>2</sup></div>
+        <div class="inst">
+           <sup>1</sup> Department of Computer Science, Stevens institute of Technology, USA<br>
+
+            <sup>2</sup> University of California, Los Angeles (UCLA), USA<br>
+        </div>
+        <h2>Abstract</h2>
+        <p>This paper proposes a joint training method to learn both the variational auto-encoder (VAE) and the latent energy-based model (EBM).The joint training of VAE and latent EBM are based on an objective function that consists of three Kullback-Leibler divergences between three joint distributions on the latent vector and the image, and the objective function is of an elegant symmetric and anti-symmetric form of divergence triangle that seamlessly integrates variational and adversarial learning. In this joint training scheme, the latent EBM serves as a critic of the generator model, while the generator model and the inference model in VAE serves as the approximate synthesis sampler and inference sampler of the latent EBM. Our experiments show that the joint training greatly improves the synthesis quality of the VAE. It also enables learning of an energy function that is capable of detecting out of sample examples for anomaly detection. 
+        </p><p>
+    </p></div>
+    <hr>
+    <h2>Paper</h2>
+    The final version will be uploaded soon...
+        <h2>Code</h2>
+    <p>The code and pre-trained model will coming soon.</p>
+
+    <hr>
+    <h2>Experiments</h2>
+    <h3>Experiment 1: Object Synthesis on Large-scale Dataset</h3>
+    <p>For object categories, we test our model on three commonly-used datasets of natural images: CIFAR-10, CelebA (Liu et al., 2015) and Large-scale Scene Understand (LSUN) dataset (Yu et al., 2015). For CelebA face dataset, we randomly select 9,000 images for training and another 1,000 images for testing in reconstruction task. The face images and the bedroom images are resized to 64 x 64 and CIFAR-10 images remain 32 x 32. The qualitative results of generated samples for objects are shown in Figure 1.</p>
+    <div class="figure">
+        <img src="./tian_han.github.io_files/gen/klminus/cifar_samples_train_7.png" width="260">
+        <img src="./tian_han.github.io_files/gen/klminus/celeba_samples_train.png" width="260">
+         <img src="./tian_han.github.io_files/gen/klminus/lsun_epoch_007_iter_3382_samples_train.png" width="260">
+
+        <p class="caption"><b>Figure 1:</b> Generated samples. Left: generated samples on CIFAR-10 dataset. Middle: generated samples on CelebA dataset. Right: generated samples on LSUN-bedroom dataset.</p>
+    </div>
+    <h3>Experiment 2: Testing Reconstruction</h3>
+    <p>We evaluate the model on hold-out testing set of CIFAR-10, CelebA and LSUN-bedroom. Specifically, we use its own 10,000 testing images for CIFAR-10, 1,000 and 40,000 hold-out testing images for CelebA and LSUN-bedroom. The qualitative reconstruction results for CIFAR-10 and CelebA are shown in Figure 2. Note that KL(+) indicates using Eqn. 17 to learn the inference model while KL(-) indicates using Eqn. 15 instead. Please see the paper for details. </p>
+    <div class="figure">
+        <img src="./tian_han.github.io_files/recon/klminus/cifar_test_step_80_gridB0.png" width="240">
+        <img src="./tian_han.github.io_files/recon/klplus/step_recon_80_gridB0.png" width="240">
+
+        <img src="./tian_han.github.io_files/recon/klminus/cifar_recon_step_80_gridB0.png" width="240">
+
+<img src="./tian_han.github.io_files/recon/klminus/celeba_test_step_0_gridB0.png" width="240">
+     <img src="./tian_han.github.io_files/recon/klplus/step_recon_0_gridB0.png" width="240">
+
+        <img src="./tian_han.github.io_files/recon/klminus/celeba_recon_step_0_gridB0.png" width="240">
+
+
+        <p class="caption"><b>Figure 2:</b> Testing Reconstruction for CIFAR-10 and CelebA. Left: testing images. Middle: testing reconstruction using KL(+). Right: testing reconstruction using KL(-).</p>
+           </div>
+    
+</div>
+
+
+</body></html>
