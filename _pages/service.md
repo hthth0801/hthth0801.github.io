@@ -14,7 +14,7 @@ nav: true
   
 - Conference senior committee member:
   - AAAI 2023, 2024
-  - 
+    
 - Conference workshop organizer:
   - ICML 2020  Explainable AI workshop, co-organizer
 
