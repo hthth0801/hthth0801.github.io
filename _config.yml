@@ -3,10 +3,10 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Tian
+first_name: Test
 middle_name: 
-last_name: Han
-email: hthth0801@gmail.com
+last_name: Test
+email: 
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -272,8 +272,8 @@ display_categories: ['blockquotes'] # these categories will be displayed on the 
 
 scholar:
 
-  last_name: [Han]
-  first_name: [Tian]
+  last_name: [Test]
+  first_name: [Test]
 
   style: apa
   locale: en
