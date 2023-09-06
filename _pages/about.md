@@ -19,7 +19,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I'm currently a tenure-track Assistant Professor in the Departement of Computer Science from Stevens Institute of Technology. Prior to joining the Stevens faculty, I obtained my Ph.D from the Department of Statistics of UCLA. 
 
 
 
