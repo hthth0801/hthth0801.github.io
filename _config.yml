@@ -3,12 +3,12 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Test
+first_name: Tian 
 middle_name: 
-last_name: Test
+last_name: Han
 email: 
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  personal website for academic use.
+  Tian Han's personal website for academic use.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty
@@ -272,8 +272,8 @@ display_categories: ['blockquotes'] # these categories will be displayed on the 
 
 scholar:
 
-  last_name: [Test]
-  first_name: [Test]
+  last_name: [Han]
+  first_name: [Tian]
 
   style: apa
   locale: en
