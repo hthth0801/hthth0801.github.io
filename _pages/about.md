@@ -8,7 +8,7 @@ subtitle: Assistant Professor
 
 profile:
   align: left
-  image: prof_pic.jpg
+  image: profile1.png
   address: 
    
 
