@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One [paper]([https://arxiv.org/pdf/2306.06323.pdf])  has been accepted to CVPR 2023.
+One [paper]([https://arxiv.org/pdf/2306.06323.pdf])  has been accepted by CVPR 2023.
