@@ -18,6 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
+<br>
 I'm currently a tenure-track Assistant Professor in the Department of Computer Science from Stevens Institute of Technology. Prior to joining the Stevens faculty, I obtained my Ph.D from the Department of Statistics at UCLA, where I worked closely with Dr. Ying Nian Wu and Dr. Song-Chun Zhu. From 2010-2013, I obtained a Master of Philosophy (M.Phil.) in computer science at HKUST, working with Dr. Chiew-lan Tai and Dr. Long Quan. 
 
 <br>
