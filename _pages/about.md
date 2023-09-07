@@ -2,6 +2,8 @@
 layout: about
 title: About
 permalink: /
+subtitle: Researcher
+organization: abc, def
 
 
 profile:
