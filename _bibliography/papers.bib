@@ -177,6 +177,12 @@
                   Ying Nian Wu},
   title        = {On the Anatomy of MCMC-Based Maximum Likelihood Learning of Energy-Based
                   Models},
+  abstract = {This study investigates the effects of Markov chain Monte Carlo (MCMC) sampling in unsupervised Maximum Likelihood (ML) learning. Our attention is restricted to the family of unnormalized probability densities for which the negative log density (or energy function) is a ConvNet. We find that many of the techniques used to stabilize training in previous studies are not necessary. ML learning with a ConvNet potential requires only a few hyper-parameters and no regularization. Using this minimal framework, we identify a variety of ML learning outcomes that depend solely on the implementation of MCMC sampling.
+On one hand, we show that it is easy to train an energy-based model which can sample realistic images with short-run Langevin. ML can be effective and stable even when MCMC samples have much higher energy than true steady-state samples throughout training. Based on this insight, we introduce an ML method with purely noise-initialized MCMC, high-quality short-run synthesis, and the same budget as ML with informative MCMC initialization such as CD or PCD. Unlike previous models, our energy model can obtain realistic high-diversity samples from a noise signal after training.
+On the other hand, ConvNet potentials learned with non-convergent MCMC do not have a valid steady-state and cannot be considered approximate unnormalized densities of the training data because long-run MCMC samples differ greatly from observed images. We show that it is much harder to train a ConvNet potential to learn a steady-state over realistic images. To our knowledge, long-run MCMC samples of all previous models lose the realism of short-run samples. With correct tuning of Langevin noise, we train the first ConvNet potentials for which long-run and steady-state MCMC samples are realistic images.},
+  pdf = {https://arxiv.org/pdf/1903.12370.pdf},
+  code = {https://github.com/point0bar1/ebm-anatomy},
+  bibtex_show ={true},
   abbr = {AAAI},
   booktitle    = {The Thirty-Fourth {AAAI} Conference on Artificial Intelligence (AAAI) },
   pages        = {5272--5280},
@@ -198,6 +204,10 @@
                   Ying Nian Wu},
   title        = {Joint Training of Variational Auto-Encoder and Latent Energy-Based
                   Model},
+  abstract = {This paper proposes a joint training method to learn both the variational auto-encoder (VAE) and the latent energy-based model (EBM). The joint training of VAE and latent EBM are based on an objective function that consists of three Kullback-Leibler divergences between three joint distributions on the latent vector and the image, and the objective function is of an elegant symmetric and anti-symmetric form of divergence triangle that seamlessly integrates variational and adversarial learning. In this joint training scheme, the latent EBM serves as a critic of the generator model, while the generator model and the inference model in VAE serve as the approximate synthesis sampler and inference sampler of the latent EBM. Our experiments show that the joint training greatly improves the synthesis quality of the VAE. It also enables learning of an energy function that is capable of detecting out of sample examples for anomaly detection.},
+  pdf = {https://arxiv.org/pdf/2006.06059.pdf},
+  code = {https://github.com/alexzhou907/vae_ebm},
+  bibtex_show = {true},
   abbr = {CVPR},
   selected = {true},
   booktitle    = {{IEEE/CVF} Conference on Computer Vision and Pattern Recognition (CVPR) },
@@ -224,6 +234,10 @@
                   Jan{-}Michael Frahm},
   title        = {Learning Multi-layer Latent Variable Model via Variational Optimization
                   of Short Run {MCMC} for Approximate Inference},
+  abstract = {This paper studies the fundamental problem of learning deep generative models that consist of multiple layers of latent variables organized in top-down architectures. Such models have high expressivity and allow for learning hierarchical representations. Learning such a generative model requires inferring the latent variables for each training example based on the posterior distribution of these latent variables. The inference typically requires Markov chain Monte Caro (MCMC) that can be time consuming. In this paper, we propose to use noise initialized non-persistent short run MCMC, such as finite step Langevin dynamics initialized from the prior distribution of the latent variables, as an approximate inference engine, where the step size of the Langevin dynamics is variationally optimized by minimizing the Kullback-Leibler divergence between the distribution produced by the short run MCMC and the posterior distribution. Our experiments show that the proposed method outperforms variational auto-encoder (VAE) in terms of reconstruction error and synthesis quality. The advantage of the proposed method is that it is simple and automatic without the need to design an inference model.},
+  pdf = {https://arxiv.org/pdf/1912.01909.pdf},
+  website = {https://eriknijkamp.com/project_short_run_inference/}, 
+  bibtex_show = {true},
   abbr = {ECCV},
   booktitle    = {16th European Conference on Computer Vision (ECCV) },
   series       = {Lecture Notes in Computer Science},
@@ -247,6 +261,10 @@
                   Ying Nian Wu},
   title        = {Divergence Triangle for Joint Training of Generator Model, Energy-Based
                   Model, and Inferential Model},
+  abstract = {This paper proposes the divergence triangle as a framework for joint training of generator model, energy-based model and inference model. The divergence triangle is a compact and symmetric (anti-symmetric) objective function that seamlessly integrates variational learning, adversarial learning, wake-sleep algorithm, and contrastive divergence in a unified probabilistic formulation. This unification makes the processes of sampling, inference, energy evaluation readily available without the need for costly Markov chain Monte Carlo methods. Our experiments demonstrate that the divergence triangle is capable of learning (1) an energy-based model with well-formed energy landscape, (2) direct sampling in the form of a generator network, and (3) feed-forward inference that faithfully reconstructs observed as well as synthesized data. The divergence triangle is a robust training method that can learn from incomplete data.},
+  pdf = {https://openreview.net/pdf?id=IeEeQOxtS0}, 
+  code = {https://github.com/enijkamp/triangle},
+  bibtex_show={true},
   abbr = {CVPR},
   selected = {true},
   booktitle    = {{IEEE/CVF} Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -266,6 +284,9 @@
                   Ying Nian Wu},
   editor       = {J{\'{e}}r{\^{o}}me Lang},
   title        = {Replicating Active Appearance Model by Generator Network},
+  abstract = {A recent Cell paper [Chang and Tsao, 2017] reports an interesting discovery. For the face stimuli generated by a pre-trained active appearance model (AAM), the responses of neurons in the areas of the primate brain that are responsible for face recognition exhibit strong linear relationship with the shape variables and appearance variables of the AAM that generates the face stimuli. In this paper, we show that this behavior can be replicated by a deep generative model called the generator network, which assumes that the observed signals are generated by latent random variables via a top-down convolutional neural network. Specifically, we learn the generator network from the face images generated by a pre-trained AAM model using variational auto-encoder, and we show that the inferred latent variables of the learned generator network have strong linear relationship with the shape and appearance variables of the AAM model that generates the face images. Unlike the AAM model that has an explicit shape model where the shape variables generate the control points or landmarks, the generator network has no such shape model and shape variables. Yet the generator network can learn the shape knowledge in the sense that some of the latent variables of the learned generator network capture the shape variations in the face images generated by AAM.},
+  pdf = {https://arxiv.org/pdf/1805.08704.pdf},
+  bibtex_show ={true},
   abbr = {IJCAI},
   booktitle    = {the Twenty-Seventh International Joint Conference on
                   Artificial Intelligence (IJCAI) },
@@ -287,6 +308,10 @@
   editor       = {Satinder Singh and
                   Shaul Markovitch},
   title        = {Alternating Back-Propagation for Generator Network},
+  abstract = {This paper proposes an alternating back-propagation algorithm for learning the generator network model. The model is a non-linear generalization of factor analysis. In this model, the mapping from the continuous latent factors to the observed signal is parametrized by a convolutional neural network. The alternating back-propagation algorithm iterates the following two steps: (1) Inferential back-propagation, which infers the latent factors by Langevin dynamics or gradient descent. (2) Learning back-propagation, which updates the parameters given the inferred latent factors by gradient descent. The gradient computations in both steps are powered by back-propagation, and they share most of their code in common. We show that the alternating back-propagation algorithm can learn realistic generator models of natural images, video sequences, and sounds. Moreover, it can also be used to learn from incomplete or indirect training data.},
+  pdf = {https://arxiv.org/pdf/1606.08571.pdf},
+  website = {http://www.stat.ucla.edu/~ywu/ABP/main.html},
+  bibtex_show = {true},
   abbr = {AAAI},
   selected = {true},
   booktitle    = {the Thirty-First {AAAI} Conference on Artificial Intelligence (AAAI)},
